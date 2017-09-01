@@ -16,7 +16,11 @@ module SaaAlarmWarningDecoder
       end
 
       def bitmask_has_bit_flipped?(bitmask, bit_position)
-        (bitmask & 1 << bit_position) > 0
+        if bit_position == 22
+          (bitmask & 1 << bit_position) > 0
+        else
+          false
+        end
       end
 
       def keys
